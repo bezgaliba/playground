@@ -7,27 +7,51 @@
     xmlns:table="sap.ui.table">
 
     <smartTable:SmartTable
-    id="SmartTable"
-    entitySet="OrgUnit"
-    tableType="TreeTable">
+        id="SmartTable"
+        entitySet="OrgUnit"
+        tableType="TreeTable">
 
-    <table:TreeTable
-        id="TreeTable"
-        selectionMode="Single"
-        rows="{myICS>/OrgUnits}"
-        noData="{i18n>textNoData}">
+        <table:TreeTable
+            id="TreeTable"
+            selectionMode="Single"
+            rows="{myICS>/OrgUnits}"
+            noData="{i18n>textNoData}">
 
-        <table:columns>
-            <table:Column>
-                <Label text="Name"/>
-                <table:template>
-                    <Text text="{myICS>Name}"/>
-                </table:template>
-            </table:Column>
-        </table:columns>
+            <table:columns>
+                <table:Column>
+                    <Label text="Name" />
+                    <table:template>
+                        <Text text="{myICS>Name}" />
+                    </table:template>
+                </table:Column>
+                <table:Column width="10%">
+                    <Label text="Object Type" />
+                    <table:template>
+                        <Text text="{myICS>ObjectType}" />
+                    </table:template>
+                </table:Column>
+                <table:Column>
+                    <Label text="Description" />
+                    <table:template>
+                        <Text text="{myICS>Description}" />
+                    </table:template>
+                </table:Column>
+                <table:Column width="10%">
+                    <Label text="Valid From" />
+                    <table:template>
+                        <Text text="{myICS>ValidFrom}" />
+                    </table:template>
+                </table:Column>
+                <table:Column width="10%">
+                    <Label text="Valid To" />
+                    <table:template>
+                        <Text text="{myICS>ValidTo}" />
+                    </table:template>
+                </table:Column>
+            </table:columns>
 
-    </table:TreeTable>
+        </table:TreeTable>
 
-</smartTable:SmartTable>
+    </smartTable:SmartTable>
 
 </mvc:View>
