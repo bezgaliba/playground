@@ -4,18 +4,34 @@
     xmlns="sap.m"
     xmlns:macros="sap.fe.macros"
     xmlns:smartTable="sap.ui.comp.smarttable"
-    xmlns:table="sap.ui.table">
+    xmlns:table="sap.ui.table"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar">
 
     <smartTable:SmartTable
         id="SmartTable"
-        entitySet="OrgUnit"
         tableType="TreeTable">
+        	<smartFilterBar:SmartFilterBar
+					id="smartFilterBar"
+                    entitySet=""
+                    useToolbar="true">
+					
+                    <smartFilterBar:controlConfiguration>
+						<smartFilterBar:ControlConfiguration key="ObjectType" visibleInAdvancedArea="true"/>
+						<smartFilterBar:ControlConfiguration key="Name" visibleInAdvancedArea="true"/>
+					</smartFilterBar:controlConfiguration>
+					<smartFilterBar:layoutData>
+						<FlexItemData shrinkFactor="0"/>
+					</smartFilterBar:layoutData>
+                    
+			</smartFilterBar:SmartFilterBar>
 
         <table:TreeTable
             id="TreeTable"
             selectionMode="Single"
             rows="{myICS>/OrgUnits}"
-            noData="{i18n>textNoData}">
+            noData="{i18n>textNoData}"
+            smartFilterId="smartFilterBar"
+			useTablePersonalisation="true">
 
             <table:columns>
                 <table:Column>
