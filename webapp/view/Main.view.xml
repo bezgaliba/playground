@@ -1,0 +1,33 @@
+<mvc:View
+    controllerName="playground.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:macros="sap.fe.macros"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:table="sap.ui.table">
+
+    <smartTable:SmartTable
+    id="SmartTable"
+    entitySet="OrgUnit"
+    tableType="TreeTable">
+
+    <table:TreeTable
+        id="TreeTable"
+        selectionMode="Single"
+        rows="{myICS>/OrgUnits}"
+        noData="{i18n>textNoData}">
+
+        <table:columns>
+            <table:Column>
+                <Label text="Name"/>
+                <table:template>
+                    <Text text="{myICS>Name}"/>
+                </table:template>
+            </table:Column>
+        </table:columns>
+
+    </table:TreeTable>
+
+</smartTable:SmartTable>
+
+</mvc:View>
